@@ -1,14 +1,22 @@
 /* Geral */
 body {
     font-family: 'Arial', sans-serif;
+    padding-top: 80px;
+    /* Ajuste para não ficar atrás do menu fixo */
+    background-color: #121212;
+    /* Fundo escuro */
+    color: #fff;
+    /* Texto claro */
 }
 
 /* Loading */
 #loading {
     z-index: 9999;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    /* Reduzido o tamanho da fonte */
     font-weight: bold;
-    color: white;
+    color: #00ffcc;
+    /* Cor futurista */
     text-align: center;
     position: fixed;
     top: 0;
@@ -54,41 +62,133 @@ body {
 .photo-placeholder {
     background-size: cover;
     background-position: center;
+    border-radius: 10px;
+    /* Bordas arredondadas */
 }
 
 /* Estilo do header */
 header {
-    background-color: #333;
-    color: white;
-    padding: 2rem 0;
+    background-color: #1a1a1a;
+    /* Fundo escuro para o header */
+    color: #fff;
+    padding: 1.5rem 0;
+    /* Ajustado o padding para menor */
+    text-align: center;
+    box-shadow: 0 10px 15px rgba(0, 255, 204, 0.2);
+    /* Sombra futurista */
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    /* Reduzido o tamanho do título */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    /* Menos espaçamento entre letras */
+    color: #00ffcc;
+    /* Cor verde neon */
+    animation: glow 1.5s ease-in-out infinite alternate;
 }
 
 header p {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    /* Menor que o anterior */
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Efeito de brilho para o título */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc;
+    }
+
+    100% {
+        text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc, 0 0 50px #00ffcc;
+    }
+}
+
+/* Menu fixo */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    z-index: 1000;
+    padding: 8px 0;
+    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.7rem; /* Fonte bem menor agora */
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #00ffcc;
+    text-decoration: underline;
 }
 
 /* Estilo das seções */
 section {
     margin-bottom: 3rem;
+    padding: 2rem 1rem;
+    /* Diminuído o padding */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fundo semi-transparente */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 255, 204, 0.2);
+    /* Sombra nas seções */
 }
 
 section h2 {
     font-size: 2rem;
+    /* Reduzido o tamanho do subtítulo */
     font-weight: bold;
+    color: #00ffcc;
+    /* Cor verde neon */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Menos espaçamento entre letras */
+    margin-bottom: 2rem;
 }
 
 section h3 {
     font-size: 1.5rem;
+    /* Reduzido o tamanho dos subtítulos */
     font-weight: bold;
+    color: #00ffcc;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 /* Layout dos cards de vilões, aliados, etc. */
 .col-md-4 {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    /* Diminuído o espaçamento */
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 255, 204, 0.2);
+    /* Sombra nas colunas */
 }
 
 ul {
@@ -97,21 +197,51 @@ ul {
 }
 
 ul li {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    /* Reduzido o tamanho da fonte */
+    color: #ccc;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+ul li:hover {
+    color: #00ffcc;
 }
 
 /* Estilo do footer */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 1rem 0;
+    background-color: #111;
+    color: #00ffcc;
+    padding: 1.5rem 0;
+    /* Diminuído o padding */
+    text-align: center;
+    box-shadow: 0 -5px 10px rgba(0, 255, 204, 0.3);
+    /* Sombra do footer */
 }
 
-/* Adicionando um fundo escuro ao body */
-body.bg-dark {
-    background-color: #121212;
+/* Efeito de rolagem suave */
+html {
+    scroll-behavior: smooth;
 }
 
-body.text-white {
-    color: #ffffff;
+/* Imagens de fundo nas seções */
+#about-batman,
+#villains,
+#allies,
+#media,
+#videos {
+    background-image: url('https://example.com/image.jpg');
+    /* Substitua pelo link correto da imagem */
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    padding: 50px 0;
+}
+
+.photo-placeholder {
+    height: 150px;
+    /* Ajustado para uma altura menor */
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
 }
